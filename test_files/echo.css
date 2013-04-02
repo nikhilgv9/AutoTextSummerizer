@@ -1,0 +1,907 @@
+.nymag-submit-form { margin-top:20px; clear:both; margin-bottom:0px; position:relative; }
+
+#bottom-submit-form { padding:43px 0 0;  background: url(http://images.nymag.com/gfx/comments/submit-add-a-comment.gif) 0 0 no-repeat; display:none;}
+
+#submit-form { padding:16px 0 0; display:none;}
+#submit-form.active, #submit-form.loading {display:block;}
+#submit-form.active .echo-submit-container {display:block;}
+
+
+.nymag-submit-form.loading { background:url(http://cache.nymag.com/gfx/ico/echo-ajax-loader.gif) no-repeat center 15px; height:40px; }
+.nymag-submit-form .echo-submit-container { background:#f2f0ed; padding: 11px 0 0 28px; display:none; }
+.nymag-submit-form .echo-submit-header { margin:0; display:none; }
+.nymag-submit-form .echo-submit-auth { /* display:none; */ }
+.nymag-submit-form .echo-submit-anonymousUserInfoAvatar { display:none; }
+.nymag-submit-form .echo-submit-anonymousUserInfoFieldsWrapper { margin:0; }
+.nymag-submit-form .echo-submit-anonymousUserInfoFields { padding:0 0 13px 0; width:536px; }
+.nymag-submit-form .echo-submit-anonymousUserInfoFieldsWrapper input { font-size:12px; font-weight:normal; height:18px; }
+.nymag-submit-form .echo-submit-anonymousUserInfoNameContainer, .nymag-submit-form .echo-submit-anonymousUserInfoUrlContainer { width:316px; }
+.nymag-submit-form .echo-submit-anonymousUserInfoNameContainer { margin:0 0 10px; }
+.nymag-submit-form .echo-submit-border { border-top-color:#BBB; border-left-color:#BBB; border-right-color:#e0e0e0; border-bottom-color:#e0e0e0; }
+.nymag-submit-form .echo-submit-body { zoom:0; }
+.nymag-submit-form .echo-submit-moderator .echo-submit-markersContainer, .nymag-submit-form .echo-submit-moderator .echo-submit-tagsContainer { display:none !important; }
+.moderator .echo-submit-markersContainer, .moderator .echo-submit-tagsContainer { display:none !important; }
+#echo-login-prompt { font-family:Verdana,Arial,Helvetica,sans-serif; font-size:10px; color:#696966; margin: 0 30px 0 0; padding: 5px 0 0; height:22px; }
+.echo-submit-forcedLogin .echo-submit-auth, .echo-submit-anonymous .echo-submit-auth { display:none; }
+.echo-submit-logged #echo-login-prompt { display:none; }
+.echo-submit-logged .echo-submit-auth { float:left; margin-left:5px; height:27px; }
+.echo-submit-container.echo-submit-logged .by-text { display:block; }
+.echo-auth-edit { display:none; }
+.echo-auth-avatar img { height:19px; width:19px; !important; margin: 0; padding:1px;}
+.echo-submit-container .by-text { font:10px Verdana,Geneva,Helvetica,Arial,sans-serif; float:left; line-height:22px; text-transform:uppercase; display:none; color:#696966; }
+.echo-submit-container .echo-auth-name { color:#666; font:10px Verdana,Geneva,Helvetica,Arial,sans-serif; text-transform:uppercase; line-height:22px; font-weight:bold; margin:0 5px; }
+.echo-submit-container .echo-auth-logout { font:10px Verdana,Geneva,Helvetica,Arial,sans-serif; line-height:22px; float:left; }
+.echo-submit-border { border-top-color:#BBB; border-left-color:#BBB; border-right-color:#e0e0e0; border-bottom-color:#e0e0e0; }
+
+#bottom-submit-form #echo-comment-prompt { width:100px; font-family:Verdana,Arial,Helvetica,sans-serif; font-size:10px; color:#222; letter-spacing:0.1em; top:85px; position:absolute; left:30px; }
+#submit-form #echo-comment-prompt { width:100px; font-family:Verdana,Arial,Helvetica,sans-serif; font-size:10px; color:#222; letter-spacing:0.1em; top:58px; position:absolute; left:30px; }
+#submit-header { padding: 3px 30px 0 0; font-family:Verdana,Arial,Helvetica,sans-serif; font-size:10px; color:#222; margin-bottom:5px; clear:both; }
+#submit-header:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+#submit-header .echo-submit-textCounter { float:right; width:300px; text-align:right; }
+.nymag-submit-form .echo-submit-content { margin:3px 0 0; width:495px; padding:5px; }
+.nymag-submit-form .echo-submit-text-area {  margin:0; padding:0; width:495px; display:block; }
+.nymag-submit-form .echo-submit-controls { margin: 2px 0 0; padding: 0 0 20px; width:510px; }
+.nymag-submit-form .echo-submit-post-container { width:131px; }
+.nymag-submit-form .echo-button button { width:131px; height:44px; background:url(http://images.nymag.com/gfx/comments/submit-post-comment_v2.gif) 0 0 no-repeat; text-indent:-9999em; float:right; border:0; position:relative; }
+.nymag-submit-form .echo-submit-cancel-button { background: url(http://images.nymag.com/gfx/comments/submit-cancel-comment.gif) 0 0 no-repeat; width:72px; height:28px; margin-right:7px; position:relative; top:13px; text-indent:-9999em; float:right; display:none; cursor:pointer; }
+.nymag-submit-form .echo-submit-cancel-button.active { display:inline; }
+.nymag-submit-form .echo-submit-cancel-button .echo-button button { background: url(http://images.nymag.com/gfx/comments/submit-cancel-comment.gif) 0 0 no-repeat; width:72px; height:28px; margin-right:7px; position:relative; top:13px; }
+
+.echo-item-replyForm.echo-item-depth-1  { padding:1px 29px 15px 30px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
+.echo-item-replyForm.echo-item-depth-1 .echo-submit-header, .echo-item-replyForm #echo-comment-prompt { display:none; }
+.echo-item-replyForm.echo-item-depth-1 #submit-header { padding:0; }
+.echo-item-replyForm.echo-item-depth-1 .by-text { margin-top: 15px; font-size:10px; }
+.echo-item-replyForm.echo-item-depth-1 .echo-submit-auth { margin:15px 0 0 6px; }
+.echo-item-replyForm.echo-item-depth-1 .echo-submit-content { clear:both; }
+.echo-item-replyForm.echo-item-depth-1 .echo-submit-body { clear:both; }
+.echo-item-replyForm.echo-item-depth-1 .echo-submit-post-container { width:110px; }
+.echo-item-replyForm.echo-item-depth-1 .echo-button button { width:109px; height:44px; background:url(http://images.nymag.com/gfx/comments/submit-post-reply_v2.gif) 0 0 no-repeat; text-indent:-9999em; float:right; border:0; position:relative; cursor:pointer; }
+.echo-item-replyForm.echo-item-depth-1 .echo-submit-cancel-button { background: url(http://images.nymag.com/gfx/comments/submit-cancel-comment.gif) 0 0 no-repeat; width:72px; height:28px; margin-right:7px; position:relative; top:13px; text-indent:-9999em; float:right; display:inline; cursor:pointer; }
+.echo-item-children .echo-item-replyForm.echo-item-depth-1 { margin:0 0 18px; }
+.echo-item-children .echo-item-avatar {
+	height:22px !important;
+	width:22px !important;
+	margin-top:-2px;
+} 
+
+#comment-total { float:left; width:218px; padding:12px 0 0; margin-top:20px; background:url(http://images.nymag.com/gfx/comments/comment-total-bg.gif) 16px 0 no-repeat; text-align:center; display:none; }
+#comment-total dl { background:#ffe400; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; padding: 6px 0; min-height:24px; margin-top:0; }
+#comment-total dl:after, #comment-total dt:after, #comment-total dd:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+#comment-total dt, #comment-total dd { display:inline-block; position:relative; top:5px; }
+#comment-total a { font-family:Arial,sans-serif; font-size:14px; font-weight:bold; }
+#comment-total dt a { font-weight:bold; color:#222; padding:1px 0 2px 0; }
+#comment-total dt a:hover { text-decoration:none; }
+#comment-total dd a { color:#111; border-bottom:1px dotted #111; margin: 0 0 0 6px; padding: 0 0 0 1px; }
+#comment-total dd a:hover { border-bottom:1px solid #111; text-decoration:none; }
+
+#sort-buttons { margin:32px 0 0 5px; display:none; float:left; width:346px; background:#f2f0ed; }
+#grubstreet #sort-buttons { width:340px; }
+#sort-buttons.hide-buttons ul li a, #sort-buttons.hide-buttons ul li.last { display:none;}
+#sort-buttons ul { margin:0; padding:9px 0 9px 8px; background:#f2f0ed; height:18px; }
+#sort-buttons:after, #sort-buttons ul:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+#sort-buttons li { display:inline; margin:0; padding:0; font-family:Arial,sans-serif; font-size:10px; background: url(http://cache.nymag.com/gfx/comments/border-1px-fff.gif) 100% 50% no-repeat; float:left; }
+#sort-buttons li.last  { background:none; float:right; margin-right:10px; }
+#sort-buttons li#sort-active { background:none; }
+#sort-buttons li#sort-popular a { padding-right:10px !important; }
+#sort-buttons li a { margin:0; padding: 5px 7px; float:left; height:10px; font-size:10px; text-transform:uppercase; }
+#sort-buttons li.active { background:none; }
+#sort-buttons li.active a { background:#fcfcfc; color:#111; cursor:text; padding:5px 7px; }
+#sort-buttons li.active a:hover { text-decoration:none; }
+#sort-threaded { font-size:9px; }
+#sort-threaded span { cursor:pointer; }
+
+#echo-stream { clear:both; padding-top:1px; display:none; }
+.echo-item-body { color:#000001; font-family:Verdana,sans-serif; font-size:11px; line-height:17px; padding:4px 35px 5px 0; }
+.echo-item-likes { background:none; padding:0 0 3px; font-size:10px; color:#777; }
+.echo-item-likes a { color:#1F638A; }
+.echo-item-likes .echo-user-list-item-avatar { display:none; }
+#fancybox-wrap.likes .fancy-bg {
+height:0;
+width:0;
+}
+
+#fancybox-wrap.likes #fancybox-inner {
+	overflow:hidden !important;
+	width:375px !important;
+	padding:5px 0 0 5px;
+	height:385px !important;
+}
+
+#fancybox-wrap.likes #fancybox-inner #likes-all ul {
+    overflow:auto;
+	height:352px;
+	padding-top:7px;
+}
+
+#fancybox-wrap.likes #fancybox-inner #likes-all li { 
+	clear:both;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-family:Verdana,Geneva,Helvetica,Arial,sans-serif;
+}
+
+#fancybox-wrap.likes #fancybox-inner #likes-all {
+	margin-top:25px;
+}
+
+#fancybox-wrap.likes #fancybox-inner #likes-all img {  
+	width:22px;
+	height:22px;
+	float:left;
+	margin:0 8px 11px 0;
+	position:relative;
+	top:-7px;
+}
+
+#fancybox-wrap.likes #fancybox-title {
+	position:absolute;
+	top:0;
+	left:0;
+	text-align:left;
+	height:20px;
+	font-weight:bold;
+	font-size:16px;
+	padding-left:15px !important;
+}
+
+#fancybox-wrap.likes #fancybox-outer {
+    -moz-box-shadow: 5px 5px 15px -7px #000000;
+    box-shadow: 5px 5px 15px -7px #000;
+    -webkit-box-shadow: 5px 5px 15px -7px #000;
+    background: none repeat scroll 0 0 #fff;
+    padding: 0 7px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    border:1px solid #999;
+    width:383px;
+    height:410px;
+}
+
+.likes #fancybox-close {
+ top:5px; 
+ right:4px;
+ background:url(http://cache.nymag.com/gfx/comments/close-btn-x.gif) 5px 5px no-repeat !important;
+ height:9px;
+ width:10px;
+ padding:5px 6px;
+ }
+
+.echo-item-content {
+	background:url(http://images.nymag.com/gfx/comments/divider.png) no-repeat;
+	background-position:bottom;
+	padding-bottom:10px;
+}
+
+.echo-item-content .echo-item-content {
+margin-left:0px;
+padding-bottom:0;
+padding-left:21px;
+margin-bottom:0;
+}
+
+.echo-item-container-root { padding:10px 0 5px; }
+
+
+.echo-item-authorName {
+	color:#999999 !important;
+	text-transform:uppercase;
+	font:bold 10px/15px Verdana,Geneva,Helvetica,Arial,sans-serif;
+}
+
+.echo-item-data {
+	margin-bottom:8px;
+}
+
+.echo-item-date {
+	color:#777777;
+	font-family:verdana, sans-serif;
+}
+
+.echo-item-depth-0 .echo-secondaryFont {
+	margin-bottom:5px;
+}
+
+.echo-item-depth-1 .echo-secondaryFont {
+        margin-bottom:5px;
+}
+
+.last .echo-item-depth-1 .echo-secondaryFont {
+	margin-bottom:5px;
+}	
+
+.echo-item-children .echo-item-content {
+/*	background:none; */
+background:url("http://images.nymag.com//gfx/comments/reply-border.png") no-repeat scroll 0px 0px transparent;
+}
+
+.echo-item-children {
+/*	padding-bottom:30px; */
+} 
+
+.echo-item-children .echo-item-children {
+	padding-bottom:0px;
+}
+
+.echo-item-content .echo-item-children {
+	margin-left:70px;
+	background-position: left bottom; */
+}
+
+.echo-item-container-child {
+	margin: 0 20px 0 0;
+}
+
+.echo-item-content .echo-item-children .echo-item-children {
+	border:none;
+}
+
+.echo-item-depth-1 {
+	background:#fff url(http://cache.nymag.com/gfx/comments/reply-divider-fade.gif) left bottom no-repeat;
+	border:none;
+	margin-left:5px;
+	margin-right:0;
+	padding:13px 0 10px 10px;
+}
+
+.echo-item-depth-1 .echo-primaryColor {
+    color: #000001;
+}
+
+
+.echo-item-children .echo-item-content:last-child .echo-item-depth-1 {
+        border-bottom:none;
+}
+
+.echo-item-childrenMarker {
+	background:url(http://images.nymag.com/gfx/comments/children-marker.png) no-repeat;
+	border:medium none;
+	width:500px;
+	height:21px;
+	margin-left:71px;
+	margin-top:1px;
+	
+}
+
+.empty {
+	border:none !important;
+}
+
+.echo-stream-more {
+	-moz-border-radius: .3em;
+	border-radius: .3em;
+	background:url(http://images.nymag.com/gfx/comments/more-bg.png) repeat-x; 
+	padding:8px;
+	color:#1F638A;
+}
+
+.echo-stream-more:hover {
+	border:1px solid #cccccc;
+}
+
+.echo-stream-more.clicked {
+	background:url(http://images.nymag.com/gfx/comments/more-bg-active.png) repeat-x;
+	border: 1px solid #E4E4E4;
+}
+
+.echo-stream-more span {
+	color:#1F638A;
+}
+
+.echo-stream-more-secondary {
+	width:452px;
+	margin-top:0;
+	margin-bottom:18px;
+	font-size:11px;
+}
+
+#comments .show-secondary .secondary {
+	display:block;
+}
+
+.show-secondary .echo-stream-more-secondary {
+	display:none;
+}
+
+#comments .secondary {
+	display:none;
+}
+
+.last .echo-item-depth-1, .pre-last .echo-item-depth-1 {
+	border-bottom:none;	
+	background-image:none;
+}
+
+.last .echo-item-depth-1 { padding-bottom:15px; }
+
+.echo-item-content.pre-last {
+	background-position:0 0;
+}
+
+.echo-item-content.last {
+	background-position:bottom left !important;
+}
+
+.show-secondary .echo-item-content.pre-last {
+	background-position:0 0;
+}
+
+.show-secondary .pre-last .echo-item-depth-1 {
+	border:none;
+	background:#fff url(http://cache.nymag.com/gfx/comments/reply-divider-fade.gif) left bottom no-repeat;
+}
+
+.show-secondary .pre-last.last .echo-item-depth-1 {
+	background:none;
+}
+
+.show-secondary .pre-last .echo-item-depth-1.ReplyForm {
+        background:none repeat scroll 0 0 #F5F3F2 !important;
+}
+
+
+.echo-item-replyForm.echo-item-depth-1 {
+	background:#F5F3F2 !important;
+	border-bottom:none;
+	margin:0 0 22px 63px;
+}
+
+/*
+.echo-item-replyForm.echo-item-depth-1 .echo-auth-avatar, .echo-item-replyForm.echo-item-depth-1 .echo-auth-name, .echo-item-replyForm.echo-item-depth-1 .echo-auth-edit  {
+	display:none;
+}*/
+
+
+.echo-item-control-Reply {
+	background:url("http://images.nymag.com/gfx/comments/icons.png") no-repeat scroll -3px -36px transparent;
+	padding:0 0 10px 16px;
+}
+
+.echo-item-control-Like, .echo-item-control-anonLike {
+        background:url("http://images.nymag.com/gfx/comments/icons.png") no-repeat scroll -3px -4px transparent;
+        padding:0 0 10px 16px;
+}
+
+.echo-item-control-Unlike {
+        background:url("http://images.nymag.com/gfx/comments/icons.png") no-repeat scroll -3px -66px transparent;
+        padding:0px 0 10px 16px;
+}
+
+.echo-item-controls {
+	margin-left:7px;
+}
+
+.echo-item-controls span.echo-item-control-delim:first-child {
+	display:none;
+}
+
+
+.echo-item-reportAbuse.active {
+        border:1px solid #dfdddb;
+	z-index:99;
+}
+
+.echo-item-depth-0, .echo-item-depth-1 {
+        position:relative;
+}
+
+
+.echo-item-reportAbuse {
+	float:right;
+	padding: 0 5px 3px;
+	border:1px solid transparent;
+	border-radius: .3em;
+	-moz-border-radius: .3em;
+    min-height:16px;
+	width:60px;
+	position:absolute;
+	right:0;
+	top:5px;
+	z-index:98;
+	background:transparent;
+	color:#333333;
+}
+
+
+.logged-in .echo-item-reportAbuse {
+	display:block;
+}
+
+.echo-item-depth-1 .echo-item-reportAbuse {
+	top:10px;
+}
+
+.echo-item-reportAbuse:hover, .echo-item-reportAbuse.active {
+	background:#fff;
+}
+
+.report-flag {
+	background:url(http://images.nymag.com/gfx/comments/report-icon.png) 33px 2px no-repeat;
+	width:49px;
+	border:1px solid transparent;
+	padding:3px 0 3px 7px;
+	-moz-border-radius: .3em;
+	border-radius: .3em;
+	min-height:16px;
+}
+
+.report-flag:hover {
+	border:1px solid #ccc;
+	cursor:pointer;
+}
+
+.echo-item-reportAbuse.active .report-flag {
+	border:1px solid #fff;
+}
+
+.report-flag span {
+	color:#808080;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	display:none; 
+}
+
+.report-flag:hover span, .echo-item-reportAbuse.active .report-flag span {
+	display:inline; 
+}
+
+.echo-item-reportAbuse ul  {
+	text-align:center;
+	display:none;
+}
+
+.echo-item-reportAbuse.active ul {
+	display:block;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.echo-item-reportAbuse ul li {
+        border:1px solid #dfdddb;
+        padding:3px 5px;
+        -moz-border-radius: .3em;
+        border-radius: .3em;
+	font-size:11px;
+	cursor:pointer;
+	margin-bottom:3px;
+}
+
+.echo-item-reportAbuse ul li:hover {
+	border: 1px solid #999;
+}
+
+.echo-item-reportAbuse ul li#report-cancel {
+	color:#e80800;
+}
+
+.report-thanks {
+	display:none;
+	border-top: 1px solid #ccc;
+	padding:5px;
+	line-height:13px;
+	font-size:11px;
+	font-weight:bold;
+}
+
+.echo-item-reportAbuse.thankyou .report-thanks {
+	display:block;
+}
+
+.echo-item-reportAbuse.thankyou ul {
+	display:none !important;
+}
+
+.echo-submit-userGuide {
+	margin-left:4px;
+}
+
+.over-limit .echo-submit-typedCharsCounter {
+	color:red;
+}
+
+.validation-error {
+    background: url("/gfx/comments/error-icon.gif") no-repeat scroll 10px 4px #FFFFFF;
+    border: 1px solid #C56A76;
+    clear: both;
+    color: #C56A76;
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-bottom: 8px;
+    padding: 2px 2px 2px 36px;
+    margin-top:34px;
+    margin-right:32px;
+}
+
+.echo-item-depth-0 .echo-item-depth-1 .validation-error, .echo-item-children .echo-item-depth-1 .validation-error   {
+	margin-right:0;
+}
+
+.validate .validation-error {
+	display:block;
+}
+
+.validate #echo-comment-prompt {
+	display:none;
+}
+
+.secondary-highlight {
+	background:none repeat scroll 0 0 #FFE400;
+	padding:1px 4px;
+	color:#000 !important;
+}
+
+.editors-picks {
+	display:none;
+	float:left;
+}
+
+.editors-picks img {
+	border:0 !important;
+}
+
+.echo-item-content.ep .echo-item-depth-0 .editors-picks, .echo-item-children .echo-item-content.ep .echo-item-depth-1 .editors-picks {
+	display:block;
+	margin-left:8px;
+}
+
+.moderator .editors-picks {
+	display:none !important;
+}
+
+.echo-item-content.ep .echo-item-depth-0 .editors-picks {
+	margin-top:-2px;
+}
+
+.echo-item-children .echo-item-subwrapper {
+	margin-left:0px;
+}
+
+.echo-item-depth-1 .echo-item-body {
+	padding-top:8px;
+	padding-right: 45px;
+}
+
+.echo-item-children .echo-item-content.ep .echo-item-body {
+	padding-top:0px;
+}
+
+.echo-item-depth-1 .echo-item-authorName  {
+	margin-left:30px;
+	padding-top:3px;
+	float:left;
+}
+
+.echo-item-depth-0 .echo-item-avatar {
+	margin-top:5px;
+}
+
+.echo-item-depth-0 .echo-item-authorName {
+        margin-top:2px;
+	float:left;
+}
+
+.echo-item-subwrapper {
+	margin-left:0px;
+}
+
+.echo-item-depth-0 .echo-item-avatar-wrapper {
+        margin:0 14px;
+}
+
+.echo-item-depth-0 .echo-item-wrapper {
+	width:486px;
+	overflow: hidden;
+}
+
+.echo-item-data {
+	margin-bottom:2px;
+	clear:both;
+}
+
+.threading .echo-item-depth-0 .echo-secondaryFont {
+	margin-bottom:5px;
+}
+
+.echo-item-control-delim {
+	margin:0 6px;
+}
+
+.echo-auth-logout span {
+	margin-right:5px;
+	color:#696966;
+	cursor:default;
+}
+
+.echo-item-depth-1 #echo-comment-prompt {
+	top:43px;
+}
+
+.replyMarker {
+	border-color:transparent transparent #F5F3F2;
+	border-style:solid;
+	border-width:0 11px 11px;
+	height:1px;
+	margin:0 0 0 92px;
+	width:0;
+	display:none;
+	top:0;
+}
+
+.replyMarker.active {
+	display:block;
+}
+
+.echo-item-depth-1 .replyMarker {
+	margin-left:32px;
+}
+
+.threading .replyMarker {
+	top:0;
+}
+
+.threading .echo-item-replyForm.echo-item-depth-1 {
+    top: 0;
+}
+
+.echo-item-depth-1 .echo-submit-logged #echo-comment-prompt {
+	top:45px;
+}
+
+.echo-item-depth-1 #echo-login-prompt {
+	margin: 10px 30px 3px 0;
+}
+
+.echo-linkColor, .echo-linkColor a {
+	color:#1F638A !important;
+}
+
+.nymag-submit-form .echo-button .ui-button-text-icon {
+	background:none !important;
+
+}
+
+.post-loading {
+	background-position:0px -45px !important;
+}
+
+.postbutton-loader {
+	positon:absolute;
+	background: url(http://images.nymag.com/gfx/ico/postbutton-loader.gif) no-repeat 98px 2px;
+	display:none; 
+	height:20px;
+}
+
+.post-loading .postbutton-loader {
+	display:block;
+}
+
+.echo-item-depth-1 .postbutton-loader {
+	background-position:81px 9px;
+	height:25px;
+}
+
+.echo-item-depth-1 .ui-button-text {
+	display:none !important;
+}
+
+.moderator .echo-item-depth-1 .echo-item-data, .moderator .echo-item-depth-1 .echo-item-date { padding-left:33px; }
+
+#echo-counter-recommends {
+	display:none !important;
+}
+
+.echo-add {
+	font-weight:normal;
+	font-size:11px;
+	text-transform:uppercase;
+	cursor:pointer;
+	border-bottom:1px dotted;
+	position:relative;
+	top:-1px;
+}
+
+.divider {
+	color:#999;
+	font-weight:normal;
+}
+
+.echo-item-markers { background:none; padding:0; }
+
+.echo-item-markers span.data-ep {
+    background: url("http://images.nymag.com/gfx/comments/editors-picks.png") no-repeat scroll -2px -1px transparent;
+    line-height: 16px;
+    margin:4px 0 2px;
+    padding: 0 0 5px;
+    text-indent: -999px;
+    display:block;
+}
+
+.echo-item-tags {
+	color:red !important;
+	background:url("http://sanfrancisco.grubstreet.dev.nymag.biz/gfx/comments/error-icon.gif") no-repeat scroll 0 0 transparent !important;
+}
+
+/* nymag style */
+
+#add-comment .login-form h1 {
+	margin-top:15px;
+}
+
+/* Krang Article Truncated Comment Styles */
+.section-headline h2 { border-right:5px solid #FFF; margin:0; display:none; }
+.section-headline p { padding-left:10px; display:none; }
+.section-headline u em { background:url(http://cache.nymag.com/gfx/comments/krang-comment-tail-grey.png) 0 0 no-repeat; width:14px; height:12px; margin:0; top:35px; left:20px; }
+h3.all { padding:5px 0 0 51px; font-weight:normal; text-transform:uppercase; color:#969696; font-size:11px; margin:0; display:none; }
+#echo-stream.articles-truncated { display:none; !important }
+#comments .articles-truncated .echo-item-container-root { padding:0; }
+#comments .articles-truncated .echo-item-wrapper { width:100%; padding: 7px 0 0; }
+#comments .articles-truncated .echo-item-depth-0 .echo-secondaryFont { margin-bottom: 12px; }
+#comments .articles-truncated .echo-item-authorName, 
+#comments .articles-truncated .echo-item-body span, 
+#comments .articles-truncated .echo-item-subusername { padding-left:51px; }
+#comments .articles-truncated .echo-item-controls,
+#comments .articles-truncated .echo-stream-header,
+#comments .articles-truncated .echo-item-avatar-wrapper,
+#comments .articles-truncated .echo-item-authorName { display:none; }
+#comments .articles-truncated .echo-item-likes { display:none; }
+#comments .articles-truncated .echo-item-subusername { color:#1f638a; font-size:10px; text-transform:uppercase; font-weight:bold; float:left; }
+#comments .articles-truncated .echo-item-subusername span { color:#777; font-weight:normal; }
+#comments .articles-truncated .echo-item-date { padding-left: 8px; float:left; }
+#comments .articles-truncated .echo-item-re { padding-right:35px; }
+#comments .articles-truncated .echo-item-re a { font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#1f638a !important; }
+#comments .articles-truncated .echo-item-body { background: url(http://images.nymag.com/gfx/comments/echo-yellow-quote.gif) 10px 2px no-repeat; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#111; padding-right:35px; padding-bottom:4px; }
+#comments .articles-truncated .echo-item-body span { line-height:17px; display: block; }
+#comments .articles-truncated .echo-item-body span p { margin:0; }
+#comments .articles-truncated .echo-item-body span p.full-comment { display:none; }
+#comments .articles-truncated .echo-item-body span p a { text-decoration:underline; font-weight:bold; }
+#comments .articles-truncated .echo-item-date { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px; color:#777; }
+#comments .articles-truncated .echo-stream-more { display: none !important; }
+#comments .articles-truncated .last-comment { background:none; padding-bottom:0; }
+.start-discussion { float:none; display:none; font-size:12px; }
+.start-discussion p { border-left:5px solid #fff; }
+.start-discussion u em.bottom { margin:0; right:20px; top:38px; background:url(http://cache.nymag.com/gfx/comments/krang-comment-count-tail-lg.png)	 0 0 no-repeat; width:14px; height:12px; }
+
+#narrow-bubble.start-discussion { width:auto; background: url("http://cache.nymag.com/gfx/comments/krang-comment-tout-tail.png") no-repeat scroll right bottom transparent; padding-bottom:5px; float:right; display:inline; font-size:11px; }
+#narrow-bubble.start-discussion ul { background:#ffe400; border-radius:6px; -webkit-border-radius:6px; -moz-border-radius:6px; padding:0 5px; margin:0; list-style:none; }
+#narrow-bubble.start-discussion ul li { padding:5px;  }
+#narrow-bubble.start-discussion ul li a { border:0; color:#1F638A; font-weight:normal; }
+#narrow-bubble.start-discussion ul li a span { color:#000; }
+
+/* Edit Button Styles */
+
+
+
+.echo-item-editTimer {
+border:1px solid #CCCCCC;
+bottom:16px;
+font-size:10px;
+padding:0 5px;
+position:absolute;
+right:5px;
+cursor:pointer;
+color:#1F638A;
+}
+
+.echo-item-editTimer:hover {
+	background: #1F638A;
+	color:#fff;
+}
+
+.echo-item-editTimer:hover .editTime {
+	color:#fff;
+}
+
+.editTime {
+	color:#999;
+}
+
+.echo-dialog {
+-moz-border-radius:4px;
+border-radius:4px;
+}
+
+.echo-dialog .ui-dialog-titlebar {
+    color:#000;
+    font-size:17px;
+	background:none repeat scroll 0 0 #F2F0ED;
+	padding:10px 0 5px 10px;
+}
+
+.ui-dialog-title { 
+	font-family: Arial,Helvetica,sans-serif;
+	font-size:16px;
+	line-height:17px;
+	font-weight:bold;
+}
+
+.ui-dialog {
+	background:none repeat scroll 0 0 #F2F0ED;
+	box-shadow: 5px 5px 15px -7px #000;
+	-webkit-box-shadow: 5px 5px 15px -7px #000;
+	-moz-box-shadow: 5px 5px 15px -7px #000;
+	padding: 0 7px;
+}
+
+.echo-editTimer-item-container .echo-submit-userInfoWrapper {
+	display:none;
+}
+
+.echo-editTimer-item-container {
+	background:none repeat scroll 0 0 #F2F0ED !important;
+}
+
+.echo-editTimer-item-container .echo-submit-body {
+	padding:5px 20px;
+}
+
+.ui-dialog .echo-button .echo-submit-cancelButton {
+	background: transparent url("http://images.nymag.com/gfx/comments/submit-cancel-comment.gif") no-repeat scroll 0 0;
+	border:0;
+    height: 28px;
+    margin-right: 7px;
+    width: 72px;
+}
+
+.ui-dialog .echo-button .echo-submit-cancelButton span {
+	text-indent: -9999em;
+}
+
+.ui-dialog .echo-button .echo-submit-postButton {
+	background: transparent url("http://images.nymag.com/gfx/comments/submit-save-changes.png") no-repeat scroll 0 0;
+	border:0;
+    height: 34px;
+    width: 123px;
+}
+
+.ui-dialog .echo-button .echo-submit-postButton span {
+	text-indent: -9999em;
+}
+
+.ui-dialog .echo-submit-controls {
+	margin:0 17px;
+	padding: 10px 0 0;
+}
+
+.echo-item-frame .echo-secondaryFont {
+	font-size: 10px;
+}
+
+#counter-text {
+	/*padding-right:6px; border-right:1px solid #c4b53c; margin-right: 3px;*/
+	padding-right:1px;
+}
+
+.echo-item-footer {
+	line-height: 1.5em;
+}
+
+.echo-item-container-root {
+padding: 20px 40px 5px;
+}
+.echo-item-container-root-thread {
+padding: 20px 40px 0;
+}
+.echo-item-body {
+color: #222222;
+font-family: Georgia, serif;
+font-size: 1.2em;
+line-height: 150%;
+padding: 4px 10px 5px 0;
+}
+.echo-item-content .echo-item-children {
+margin-left: 60px;
+}
+.echo-item-childrenMarker {
+margin-left: 21px;
+}
+.echo-item-depth-1 .echo-item-authorName {
+margin-left: 0;
+}
+
+.echo-item-content {
+padding-bottom: 25px;
+}

@@ -1,0 +1,28 @@
+function _adroll__() {
+    var rnd = Math.random(); var r = rnd*10000000000000000;
+    var randomNo = new String(rnd); var randomNoString = randomNo.substring(2, 11);
+    var content = unescape('%3Cdiv%20class%3D%22adroll-block%22%3E%0A%20%20%20%20%0A%0A%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20%20%20%20%20%20%20%20%28function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20_t%20%3D%20document.createElement%28%27span%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20a%20%3D%20document.createElement%28%27a%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20a.target%20%3D%20%22_blank%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20_href%20%3D%20__adroll.format_macros%28%22http%3A//d.adroll.com/r/N34ZPOW5TRGMJKDEFHM2G4/UAZEVLFYKZGQPMOT77ULX3/472eb384cb6d6bfb4c8485015aa92232.re%22%2C%20true%2C%20true%2C%20false%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20a.href%20%3D%20_href%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28__adroll._secure%28%29%29%20var%20img_src%20%3D%20%22https%3A//s.adroll.com/a/ISW/MFD/ISWMFDHBUFHKHABNQFYLIS.jpg%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20else%20var%20img_src%20%3D%20%22http%3A//a.adroll.com/a/ISW/MFD/ISWMFDHBUFHKHABNQFYLIS.jpg%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20a.innerHTML%20%3D%20%27%3Cimg%20src%3D%22%27%2Bimg_src%2B%27%22%20width%3D%22728%22%20height%3D%2290%22%20border%3D%220%22%20alt%3D%22%22%20/%3E%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20_t.appendChild%28a%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20document.write%28_t.innerHTML%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20__adroll.reset%28%29%3B%0A%20%20%20%20%20%20%20%20%7D%29%28%29%3B%0A%20%20%20%20%20%20%20%20%3C/script%3E%0A%0A%3Cscript%3E%28function%28%29%20%7Bdocument.write%28%27%3Csc%27%2B%27ript%20type%3D%22text/javascript%22%20src%3D%22%27%20%2B%20%28%28%22https%3A%22%20%3D%3D%20document.location.protocol%29%20%3F%20%22https%3A//c.betrad.com%22%20%3A%20%22http%3A//c.betrad.com%22%29%20%2B%20%27/surly.js%3F%3Bad_w%3D%5BADROLL_WIDTH%5D%3Bad_h%3D%5BADROLL_HEIGHT%5D%3Becaid%3D%5BECAID%5D%3Bcoid%3D412%3Bnid%3D890%3B%22%3E%3C/scr%27%2B%27ipt%3E%27%29%3B%7D%28%29%29%3B%3C/script%3E%0A%3C/div%3E%0A%0A');
+    content = content.replace(/\[timestamp\]/gi, r);
+    content = content.replace(/\[randomNo\]/gi, randomNoString);
+    content = content.replace(/\[ADROLL_WIDTH\]/gi, adroll_width);
+    content = content.replace(/\[ADROLL_HEIGHT\]/gi, adroll_height);
+    content = content.replace(/\[ECAID\]/gi, "772PFIARQ5GLDKAQNRRNP2_7DESFXZARBHQJBZ6PR26RZ_g");
+    content = content.replace(/\[CAMPAIGN_EID\]/gi, "B7KGOHYVK5ELPJQ5F72XVN");
+    content = content.replace(/\[AD_EID\]/gi, "7DESFXZARBHQJBZ6PR26RZ");
+    content = content.replace(/\[ADGROUP_EID\]/gi, "772PFIARQ5GLDKAQNRRNP2");
+    content = content.replace(/\[PLACEMENT\]/gi, "UAZEVLFYKZGQPMOT77ULX3");
+    var _dynurl = __adroll.format_macros("http://d.adroll.com/r/N34ZPOW5TRGMJKDEFHM2G4/UAZEVLFYKZGQPMOT77ULX3/472eb384cb6d6bfb4c8485015aa92232.dy", true, true, true);
+    content = content.replace(/\[ADRClickUrl\]/gi, escape(_dynurl));
+    content = content.replace(/\[ADRClickUrl_UNESC\]/gi, _dynurl);
+    content = content.replace(/\[ADRClickUrl_ESC\]/gi, escape(_dynurl));
+    if (__adroll._secure()) var eurl = "https://d.adroll.com/r/N34ZPOW5TRGMJKDEFHM2G4/UAZEVLFYKZGQPMOT77ULX3/472eb384cb6d6bfb4c8485015aa92232.ev";
+    else var eurl = "http://d.adroll.com/r/N34ZPOW5TRGMJKDEFHM2G4/UAZEVLFYKZGQPMOT77ULX3/472eb384cb6d6bfb4c8485015aa92232.ev";
+    var engageurl = __adroll.format_macros(eurl, false, true, false);
+    content = content.replace(/\[ADREngageUrl\]/gi, escape(engageurl));
+    content = content.replace(/\[ADREngageUrl_UNESC\]/gi, engageurl);
+    content = content.replace(/\[ADREngageUrl_ESC\]/gi, escape(engageurl));
+        content = content + __adroll.generate_link(0, "http://www.adroll.com/publisher/index?path_name=googleadxnetwork", "AdRoll Tier One", "728");
+        __adroll.set_cookie("N34ZPOW5TRGMJKDEFHM2G4", "UAZEVLFYKZGQPMOT77ULX3", "772PFIARQ5GLDKAQNRRNP2", "7DESFXZARBHQJBZ6PR26RZ");
+    document.write(content);
+}
+_adroll__();

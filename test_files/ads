@@ -1,0 +1,27 @@
+{
+var viewReq = new Array();function vu(u) {var i=new Image();i.src=u.replace("&amp;","&");viewReq.push(i);}
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_ad = {}; 
+google_ad.n = 1; 
+google_ad.type = "html"; 
+google_ad.bidtype = "CPM"; 
+google_ad.targeting_type = ""; 
+google_ad.url = "http://adclick.g.doubleclick.net/aclk?sa=l&amp;ai=CrA-XFu46UfbQBY3cigfL34HoA-GjjusCkcmlkznZidWGiAEQASAAUIDH4cQEYOWCgIC4DoIBF2NhLXB1Yi05NDY0MzIxNzk4MzU5NDY3yAEJqAMBqgR2T9AJFwwSxQt5ihVpdNsoGK7-qaB5blfXTCAXcsQgmUTBzMbg6J3jG8D0eKAEc9oLwByf4zDhbqbEVLfdGUdrcKtdHg6P8yYcrJdAMvpY2QEgcdBbxM133wgzQ-ab5crelP8nZSrdYgMWRn0Z4vg1YRRSSo-Z2Q&amp;num=1&amp;sig=AOD64_3SZ3jv88tiNKZbTgAXEzn2M971JQ&amp;client=ca-pub-9464321798359467&amp;adurl="; 
+google_ad.visible_url = "fedena.com"; 
+google_ad.snippet = "\x3cdiv style\x3d\x22text-align: center;\x22\x3e\n\x3cscript type\x3d\x22text/javascript\x22\x3e\x3c!--\nadroll_width \x3d 728;\nadroll_height \x3d 90;\nadroll_a_id \x3d \x22UAZEVLFYKZGQPMOT77ULX3\x22;\nadroll_s_id \x3d \x22N34ZPOW5TRGMJKDEFHM2G4\x22;\nadroll_c_id \x3d \x22772PFIARQ5GLDKAQNRRNP2\x22;\nadroll_render_link \x3d false;\nadroll_ext_network \x3d \x22g\x22;\nadroll_c_macro \x3d \x22http://adclick.g.doubleclick.net/aclk%3Fsa%3Dl%26ai%3DCrA-XFu46UfbQBY3cigfL34HoA-GjjusCkcmlkznZidWGiAEQASAAUIDH4cQEYOWCgIC4DoIBF2NhLXB1Yi05NDY0MzIxNzk4MzU5NDY3yAEJqAMBqgR2T9AJFwwSxQt5ihVpdNsoGK7-qaB5blfXTCAXcsQgmUTBzMbg6J3jG8D0eKAEc9oLwByf4zDhbqbEVLfdGUdrcKtdHg6P8yYcrJdAMvpY2QEgcdBbxM133wgzQ-ab5crelP8nZSrdYgMWRn0Z4vg1YRRSSo-Z2Q%26num%3D1%26sig%3DAOD64_3SZ3jv88tiNKZbTgAXEzn2M971JQ%26client%3Dca-pub-9464321798359467%26adurl%3D\x22;\nadroll_url_macro \x3d \x22\x22;\nadroll_cpm_macro \x3d \x22UTruFgABaHYK4q4NPQBvy8l8ofTf6MX_nkIMLA\x22;\n//--\x3e\x3c/script\x3e\n\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22http://a.adroll.com/j/rolling.js\x22\x3e\x3c/script\x3e\n\x3c/div\x3e"; 
+google_ad.snippet ="\x3cscript\x3evu(\x22http://googleads.g.doubleclick.net/pagead/adview?ai\x3dCTInuFu46UfbQBY3cigfL34HoA-GjjusCkcmlkznZidWGiAEQASAAUIDH4cQEYOWCgIC4DoIBF2NhLXB1Yi05NDY0MzIxNzk4MzU5NDY3yAEJqAMBqgR2T9AJFwwSxQt5ihVpdNsoGK7-qaB5blfXTCAXcsQgmUTBzMbg6J3jG8D0eKAEc9oLwByf4zDhbqbEVLfdGUdrcKtdHg6P8yYcrJdAMvpY2QEgcdBbxM133wgzQ-ab5crelP8nZSrdYgMWRn0Z4vg1YRRSSo-Z2cAEwcWMyhCSBQYIAhABGAE\x26sigh\x3d3qdhl53SsQg\x22);\x3c/script\x3e" +google_ad.snippet;
+google_ads[0] = google_ad; 
+google_info.feedback_url = "http://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://nymag.com/news/politics/21681/%26gl%3DIN%26hl%3Den%26client%3Dca-pub-9464321798359467%26ai0%3DCrA-XFu46UfbQBY3cigfL34HoA-GjjusCkcmlkznZidWGiAEQASAAUIDH4cQEYOWCgIC4DoIBF2NhLXB1Yi05NDY0MzIxNzk4MzU5NDY3yAEJqAMBqgR2T9AJFwwSxQt5ihVpdNsoGK7-qaB5blfXTCAXcsQgmUTBzMbg6J3jG8D0eKAEc9oLwByf4zDhbqbEVLfdGUdrcKtdHg6P8yYcrJdAMvpY2QEgcdBbxM133wgzQ-ab5crelP8nZSrdYgMWRn0Z4vg1YRRSSo-Z2Q\x26usg\x3dAFQjCNE-rgpyl9aR9e5BdMz3j3-a-hfrSw";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}

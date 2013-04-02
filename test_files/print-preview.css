@@ -1,0 +1,172 @@
+@page { 
+	margin: 0.625in 0;
+}
+
+@page :first {
+	margin: 0;
+}
+
+#print-modal-mask {
+	position: absolute; 
+	top: 0;
+	left: 0;                        
+	z-index: 999999999999999999999999;
+	background-color: #000;
+}
+#print-modal {
+    background: #FFF;
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -465px;
+    padding: 0 128pt;
+    width: 588px;
+    box-shadow: 0 0 20px #000;
+    -moz-box-shadow: 0 0 20px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+    font: 11pt/15pt Georgia,Garamond,Times,"Times New Roman",serif;
+	z-index: 9999999999999999999999999 !important;
+}
+#print-modal #story {
+	font: 11pt/18pt Georgia,Garamond,Times,"Times New Roman",serif;
+}
+#print-modal #story .caption {
+    color: #000000;
+    font-family: Georgia,serif;
+    font-size: 11px;
+    line-height: 20px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+#print-modal-content {
+    margin: 68px 0;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+/* PRINT CONTROLS */
+#print-modal-controls {
+	top: 15px;
+    left: 50%;
+    margin: 0 0 0 120px;
+    position: fixed;
+    padding: 11px 12px 5px;
+    background: transparent;
+	z-index: 0;
+}
+#print-modal-controls:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: ".";
+	text-indent: -9999px;
+	z-index: -1;
+	background: #fff;
+    opacity: 0.9;
+    filter: alpha(opacity=9);
+	border: none;
+	border-radius: 3px;
+}
+#print-modal-controls a {
+	float: left;
+	display: block;
+	font: 12px arial;
+	color: #1f638a;
+	text-decoration: none;
+	margin: 0 6px;
+	z-index: 0;
+}  
+#print-modal-controls .print {
+	display: block;
+	position: relative;
+	padding-top: 9px;
+	padding-bottom: 3px;
+	padding-left: 34px;
+	padding-right: 9px;
+	background-position: 8px 2px;
+	background-repeat: no-repeat;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABT0lEQVR42u2Vv0/CQBTH/WfrgGtnnDpRp3ajI9aVmgABo4bSgZq44YJhsLcw0cnr1q+vbyjKeXhnwmJ8ybfvfrzv+6TX5HoG4KT6owAhBObzeas0TTnr1NRXUsIYcP/wCJvYbDZYr1/NAdPpHWyDPKcFzGaGgOUyR5LcwjLYk+dPCkRpvt1u8VYIawB52Nv00AIGg2suLooCi8UCWZaZiGuFEOylHnpAv9/norquWx3MWZ+DZl/WoyjSA2hTbQoOpfl+f18PkjWgRaggZZ2eoFPQA8IwRFVVkFLinSQtdP484BwEgR7g+z52ux3KsuTcjvf5QOp6r+frAZ7nHbtzjO4n6nHsDa6wWr0gSRL+WCQ+U3Wsajgcspd66AGj0QSu6yKOb2AZ5InZOx5PFIByTJ3OBSyDPY3X6LL7JcD8Nu12L+E4jpXI8y3g/6f/oz4AXxRkXb7iHMUAAAAASUVORK5CYII=');
+	background-color: #f9f9f9;
+	border: solid 1px #d0d0d0;
+	border-radius: 3px;
+}
+#print-modal-controls .close {
+	display: block;
+	padding-top: 6px;
+	padding-bottom: 3px;
+	padding-left: 28px;
+	margin-top: 3px;
+	margin-bottom: 8px;
+	background-position: -1px -2px;
+	background-repeat: no-repeat;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAABr0lEQVR42u2WO2vCUBiGC05OBaFQEISunboWhE6d+g8KXQv9AZ26CoWunQQnJ8G1U6EgdBI6SKF4QdRItBpv0UgkIJy+rxRiKc0XY+jk8HDISfI95/qds6eU+ld2whWlUukI3IECeAcKfIBXkALHYQgpOgAZsNR1XU0mEzWbzZTjOCxXz51OR5XLZTYgCxJBhZQlgQERBSLdbpdSE5xvKqTsBNiDwYDBfDMcDil1QFIWurIY0Pv9PoNsDBvJkQFxv8J7YRglOK+Upr2Fbu/sxWLxI0AulyNunfyOwiVISMIbTdP+CkqEehfGYTxJmHHnzkMqyNbmMi8Jn8fjMX/wkooyYpomhUVJWMSHXgtCkLlYlkVhRRI+jUajUHrILMTUJwkfe71eKHNoGAaFWUl4Ua/XQ1mljUaDwktJGAXGfD7fah/atk2ZBfb9ZJpbdy8Go91uU5jym9oioCCkNymtvYGoIPx1DlYgDSLTQDzIeRgDL81mU0l7czqdqlarRVkRHG5zxaD4CmjVanXVA6Y+pi2WPHRrtRpFn+AaRMK6RFF8ClIgDfLf5QM4210T1/kCkopaYWhcSqkAAAAASUVORK5CYII=');
+}
+/* END PRINT CONTROLS */
+
+#print-modal  #content-primary  {
+	margin:0 !important;
+}
+#print-modal #content {
+	background: #fff !important;
+	border: none !important;
+}
+#print-modal #text-size {
+	float:left;
+}
+#print-modal .nymag-logo {
+    border-bottom: 1px solid #000000;
+    height: 25px;
+}
+#print-modal .nymag-logo img {
+	border:none;
+}
+#print-modal #text-size a {
+	color: #000;
+	display: inline !important;
+	float: none !important;
+} 
+.nextpage0 > div {
+	padding-top: 0 !important;
+}
+#print-modal #story .drop,
+#print-modal #story .drop-legacy {
+	font-size: 3.5em;
+	margin-top: -2px;
+	margin-bottom: -5px;
+}
+#print-modal #main .inset-alt {
+    display: none;
+}
+#print-modal #story table {
+	float: left;
+	border-collapse: collapse;
+	display: block;
+	width: 50%;
+	margin-top: 6px;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+#print-modal  #story img {
+	width: 100%;
+	height: auto;
+}
+#print-modal #story table div {
+	font-family: arial, helvetica, sanserif;
+	font-size: 0.75em;
+}
+#print-modal #story table div {
+	color: black;
+	font-family: Georgia,serif;
+	font-size: 11px;
+	line-height: 1.4;
+}
+#story .copyright,
+#print-modal #story table div > div  {
+	color: #666 !important;
+	font-family: Georgia,serif !important;
+	font-size: 9px !important;
+	text-align: left !important;
+	line-height: 13.8667px;
+}

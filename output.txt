@@ -1,0 +1,24 @@
+SUMMARY OF FILE C:/Users/Nikhil/workspace/AutoTextSummerizer/input2.txt
+-------------------------------------------
+Title
+--------------------
+entropy
+
+Important keywords
+----------------------------
+entropy
+process
+system
+heat
+energy
+state
+definition
+temperature
+quantity
+thermodynamics
+
+
+Most Important paragraph
+------------------------
+where the uniform temperature (T) of a closed system is divided into an incremental reversible transfer of heat energy into that system (dQ). The above definition is sometimes called the macroscopic definition of entropy because it can be used without regard to any microscopic picture of the contents of a system. In thermodynamics, entropy has been found to be more generally useful and it has several other reformulations. Entropy was discovered when it was noticed via mathematics to be a quantity that behaves as a function of state. Entropy is an extensive property, but it is often given as an intensive property of specific entropy as entropy per unit mass or entropy per mole.
+Rating:9

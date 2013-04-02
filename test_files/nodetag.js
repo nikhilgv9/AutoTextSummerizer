@@ -1,0 +1,1 @@
+ if(Math.random()<1) document.write('<scr'+'ipt src="http://content.dl-rms.com/dt/s/3241/s.js"></scr'+'ipt>'); 
