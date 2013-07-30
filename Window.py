@@ -69,7 +69,7 @@ class Window(Tk):
     def htmlFromStatistics(self,stat,file_name):
         keyWords=stat.keywords
         s="<html><head></head><body>"
-        s=s+"<h1>SUMMARY OF FILE "+file_name+"</h1>\r\n<br/>"
+        s=s+"<h2>SUMMARY OF FILE "+file_name+"</h2>\r\n<br/>"
         s=s+"<h3>Title</h3>"
         s=s+stat.title+"\r\n<br/>\r\n<br/>"
         s=s+"<h3>Important keywords</h3>"
